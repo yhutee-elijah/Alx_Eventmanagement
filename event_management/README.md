@@ -70,7 +70,37 @@ event-management-api
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+# Users App Documentation
 
-## License
+## Overview
+The `users` app is designed to handle user-related functionality for the Social Media API project. It includes features such as user registration, authentication, and profile management.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Setup Instructions
+1. **Install Dependencies**: Ensure that Django and Django REST Framework are installed in your environment.
+2. **Add to Installed Apps**: Include the `users` app in your project's `settings.py` file under `INSTALLED_APPS`:
+   ```python
+   INSTALLED_APPS = [
+       ...
+       'users',
+       ...
+   ]
+   ```
+
+## Usage
+- **User Registration**: Users can register through the `/register` endpoint.
+- **User Login**: Users can log in using the `/login` endpoint, which returns a token for authentication.
+- **Profile Management**: Users can manage their profiles through the `/profile` endpoint.
+
+## Features
+- Custom user model extending Django's `AbstractUser`.
+- Token-based authentication using Django REST Framework.
+- Serializers for converting user data to and from JSON format.
+
+## Testing
+To run tests for the `users` app, use the following command:
+```bash
+python manage.py test users
+```
+
+## Contributing
+Contributions to the `users` app are welcome. Please follow the project's contribution guidelines.
