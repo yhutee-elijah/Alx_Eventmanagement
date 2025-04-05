@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ event.title }}</h2>
+<p><strong>Organizer:</strong> {{ event.organizer }}</p>
+<p><strong>Date:</strong> {{ event.date_time }}</p>
+<p><strong>Location:</strong> {{ event.location }}</p>
+<p><strong>Capacity:</strong> {{ event.capacity }}</p>
+<p>{{ event.description }}</p>
+
+{% if user == event.organizer %}
+    <a href="{% url 'event_edit' event.id %}">Edit</a> |
+    <a href="{% url 'event_delete' event.id %}">Delete</a>
+{% endif %}
+{% endblock %}
